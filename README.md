@@ -207,7 +207,7 @@ In detail, a CA(Certificate Authority) is introduced in the protocol. For each n
 
 * Used go-fmt to format all codes to make them easy to read and maintain.
 * Wrote comments for each struct and each function.
-* Code test coverage reaches 80%, see `assets/TestCoverageReport.html` for the coverage report.
+* Code test coverage reaches 80%.
 
 
 ## 4 Future Work
