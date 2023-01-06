@@ -41,7 +41,7 @@ bash ./scripts/generate_ca.sh ./config/ca-cert
 2. Generate the key and certificate for a node.
 
 ```bash
-# run generate_cert.sh script, and specity the directory of the ca certificate, the directory for output, and the IP of the node.
+# run generate_cert.sh script, and specify the directory of the ca certificate, the directory for output, and the IP of the node.
 bash ./scripts/generate_cert.sh ./config/ca-cert ./config/node1 127.0.0.1
 ```
 
