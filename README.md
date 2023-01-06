@@ -168,23 +168,23 @@ Chord nodes provide 6 interfaces - *FindSuccessor*, *Notify*, *GetPredecessor*, 
 
 * *Put* asks our node to put the key/value pair in the *PutReq* to our storage, then forwards the request to our successor if needed.
 
-|  *Put*()  |  Type  |     Name      | $\quad \quad$Description$\quad \quad$                        |
-| :-------: | :----: | :-----------: | :----------------------------------------------------------- |
-| Request:  | bytes  |      key      | The key of the data item.                                    |
-|           | bytes  |     value     | The value of the data item.                                  |
-|           | int64  |    expire     | The data item expires at this time, in the format of UNIX timestamp. |
-|           | string | initiatorAddr | The address of the node initiating the Put request.          |
+|  *Put*()  |  Type  |     Name      | Description                                                                                                              |
+|:---------:|:------:|:-------------:|:-------------------------------------------------------------------------------------------------------------------------|
+| Request:  | bytes  |      key      | The key of the data item.                                                                                                |
+|           | bytes  |     value     | The value of the data item.                                                                                              |
+|           | int64  |    expire     | The data item expires at this time, in the format of UNIX timestamp.                                                     |
+|           | string | initiatorAddr | The address of the node initiating the Put request.                                                                      |
 |           | int32  |  replication  | The times the data item should be replicated. This value needs to be decremented by one when forwarding to another node. |
-| Response: |  void  |               |                                                              |
+| Response: |  void  |               |                                                                                                                          |
 
 
 * *Get* asks our node to get the value for the given key specified in the *GetReq* from our storage, and return the result as a *GetResp*.
 
-|  *Get*()  | Type  | Name  | \quad \quad$ |
-| :-------: | :---: | :---: | :------------------------------------ |
-| Request:  | bytes |  key  | The key to look up.                   |
-| Response: | bytes | value | The value of the key, if any.         |
-|           | bool  |  ok   | Whether the key exists.               |
+|  *Get*()  | Type  | Name  | Description                   |
+|:---------:|:-----:|:-----:|:------------------------------|
+| Request:  | bytes |  key  | The key to look up.           |
+| Response: | bytes | value | The value of the key, if any. |
+|           | bool  |  ok   | Whether the key exists.       |
 
 
 
