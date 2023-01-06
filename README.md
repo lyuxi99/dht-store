@@ -156,7 +156,7 @@ Chord nodes provide 6 interfaces - *FindSuccessor*, *Notify*, *GetPredecessor*, 
 | *GetPredecessor*() | Type | Name | Description       |
 | :----------------: | :--: | :--: | :---------------- |
 |      Request:      | void |      |                   |
-|     Response:      | Node | node | Our predercessor. |
+|     Response:      | Node | node | Our predecessor. |
 
 * *Ping* asks our node to respond with an empty message, used to keep alive.
 
