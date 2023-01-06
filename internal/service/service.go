@@ -35,7 +35,7 @@ func readParams(configurationFile string) (*Params, error) {
 		DataFile:     cfg.Section("dht").Key("data_file").String(),
 		CACert:       cfg.Section("dht").Key("ca_cert").String(),
 		ServerCert:   cfg.Section("dht").Key("hostcert").String(),
-		ServerKey:    cfg.Section("").Key("hostkey").String(),
+		ServerKey:    cfg.Section("dht").Key("hostkey").String(),
 	}, nil
 }
 
