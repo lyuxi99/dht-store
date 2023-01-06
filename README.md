@@ -1,6 +1,6 @@
 # DHT Store
 
-This is an implementation of a P2P data storage module based on [Chord protocol](https://pdos.csail.mit.edu/papers/chord:sigcomm01/chord_sigcomm.pdf) in Golang.
+This is an implementation of a P2P Distributed Hash Table (DHT) storage module based on [Chord protocol](https://pdos.csail.mit.edu/papers/chord:sigcomm01/chord_sigcomm.pdf) in Golang.
 
 ## 1 Documentation
 
