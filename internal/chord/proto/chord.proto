@@ -1,0 +1,56 @@
+syntax = "proto3";
+package proto;
+option go_package = "DHT/internal/chord/proto";
+
+service Chord {
+  // FindSuccessor asks us to find the given id's successor.
+  rpc FindSuccessor (Id) returns (Node) {}
+
+  // Notify lets us think the given node might be our Predecessor.
+  rpc Notify (Node) returns (SuccessorList) {}
+
+  // GetPredecessor asks us to return our Predecessor.
+  rpc GetPredecessor (Void) returns (Node) {}
+
+  // Ping asks us to respond with an empty message, used to keep alive.
+  rpc Ping (Void) returns (Void) {}
+
+  // Put asks us to put the key/value pair to our storage, then forwards the request to our successor if needed.
+  rpc Put(PutReq) returns (Void) {}
+
+  // Get asks us to get the value for the given key from our storage.
+  rpc Get(GetReq) returns (GetResp) {}
+}
+
+message Id {
+  bytes id = 1;
+}
+
+message Node {
+  bytes id = 1;
+  string addr = 2;
+}
+
+message SuccessorList {
+  repeated Node nodes = 1;
+}
+
+message PutReq{
+  bytes key = 1;
+  bytes value = 2;
+  int64 expire = 3;
+  string initiatorAddr = 4;
+  int32 replication = 5;
+}
+
+message GetReq{
+  bytes key = 1;
+}
+
+message GetResp{
+  bytes value = 1;
+  bool ok = 2;
+}
+
+message Void {
+}
